@@ -1,0 +1,34 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  background-color: #FFD3F8; 
+  font-family: 'Charm';
+  color: #ED0A3F;
+}
+
+.jumbotron-fluid {
+	background-color: #FFA6C9 !important;
+	font-family: 'Charm', cursive;
+}
+
+.btn-danger {
+	color: #1B1B1B !important;
+}
+
+.btn-danger:cover {
+        backgound-color: #1B1B1B !important;
+}
+
+#rose {
+	position: fixed;
+	right: 0;
+	bottom:0;
+}
+
+#foot {
+	position: fixed;
+        left:  0;
+        bottom: 0;
+}
