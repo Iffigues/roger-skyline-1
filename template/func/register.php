@@ -2,7 +2,7 @@
 
 function login($a,$b)
 {
-	$dbh = new PDO('mysql:host=localhost;dbname=rose', "margaux", "Petassia01");
+	$dbh = new PDO('mysql:host=localhost;dbname=rose', "your mysql user name", "your mysql user password");
 	$stmt = $dbh->prepare("SELECT * FROM rose  WHERE login=? LIMIT 1");
 	if ($stmt->execute(array($a))) 
   		while ($row = $stmt->fetch()) 
@@ -17,7 +17,7 @@ function login($a,$b)
 
 function addin($a,$b)
 {
-	$dbh = new PDO('mysql:host=localhost;dbname=rose', "margaux", "Petassia01");
+	$dbh = new PDO('mysql:host=localhost;dbname=rose', "your mysql user name", "your mysql user password");
 	$stmt = $dbh->prepare("INSERT INTO rose (login, pwd) VALUES (?,?)");
 	$stmt->bindParam(1, $aa);
 	$stmt->bindParam(2, $bb);
