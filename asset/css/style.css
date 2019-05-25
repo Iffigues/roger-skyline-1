@@ -3,13 +3,14 @@ html {
 }
 
 body {
+	background-attachment: fixed;
 	min-height: 100%;
 	height: 100%;
 	width: 100%;
-	background-color: #FFD3F8; 
+	background-color: lightpink; 
 	font-family: 'Charm';
 	color: #ED0A3F;
-	background-image:url("/site/asset/img/rose.png");
+	background-image:url("/asset/img/rose.png");
 	background-repeat: no-repeat;
 	background-position:100% 100%;
 }
@@ -20,17 +21,36 @@ html, body {
 }
 
 header {
-	background-color: #FFA6C9;
+	background: mediumvioletred;
 	display: flex;
-	height: 5%;
+	height:5%;
 	align-items: center;
 	justify-content: center;
 }
 
-#foot {
+header img {
+	display:flex;
+	height:50px;
+	width:50px;
+}
+
+.head {
+	height:5%;
+	width:100%;
+	background-color:hotpink;
+	display:flex;
+	align-items: center;
+	justify-content: space-evenly;
+	text-shadow: #C71585 3px 2px 10px;
+}
+
+footer {
 	position: fixed;
 	left:  0;
 	bottom: 0;
+	background-color:pink;
+	width:100%;
+	color:#1B1B1B;
 }
 
 #admin-panel {
@@ -46,4 +66,24 @@ header {
 #content {
 	height: 100%;
 	width: 100%;
+}
+
+.char {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.tank img {
+	box-shadow: 8px 8px 12px deeppink;
+	height: 300px;
+	width: 400px;
+	border: 5px solid palevioletred;
+	border-radius: 5px;
+}
+
+.tank h1 {
+	text-align: center;
+	text-shadow: #FF1493 3px 2px 10px;
 }

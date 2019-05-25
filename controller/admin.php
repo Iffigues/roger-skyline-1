@@ -1,6 +1,6 @@
 <?php
 require_once("template/func/adm_act.php");
-
+require_once("template/func/categorie.php");
 $validated = validated_adm($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']);
 if (!isset($_SERVER['PHP_AUTH_USER'])){
     header('WWW-Authenticate: Basic realm="My Realm"');
@@ -15,8 +15,12 @@ if (!isset($_SERVER['PHP_AUTH_USER'])){
         header('Content-Type: text/html');
         echo "<html><body>Cette zone est accessible uniquement aux membres du site</body></html>";
     } else {
-	    	if ($_SERVER['REQUEST_METHOD'] == 'POST')
+	    	if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_GET['action'])
 			adm($_GET['action'], $_POST);
+		else if ($_GET['action'])
+			adm($_GET['action'],$_POST);
+		else if ($_GET['cat'])
+			cate($_GET['cat'], $_GET['produit']);
       		require_once("template/admin.php"); 
     }
 }
