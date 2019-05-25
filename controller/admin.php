@@ -15,10 +15,8 @@ if (!isset($_SERVER['PHP_AUTH_USER'])){
         header('Content-Type: text/html');
         echo "<html><body>Cette zone est accessible uniquement aux membres du site</body></html>";
     } else {
-	    	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			require_once("template/func/adm_act.php");
-
-		}
+	    	if ($_SERVER['REQUEST_METHOD'] == 'POST')
+			adm($_GET['action'], $_POST);
       		require_once("template/admin.php"); 
     }
 }
