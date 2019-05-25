@@ -11,7 +11,7 @@
 <header>
 <h1>PP Is For Pink Paradise</h1>
 </header>
-<div>
+<div id="content">
 	<?= $content ?>
 </div>
 <footer id="foot"
