@@ -23,9 +23,8 @@ function add_pannel($e) {
 
 function del_cookie($a) {
 	$cook = get_cookie();
-	if ($cook[$a]) {
+	if ($cook[$a] !== null) {
 		unset($cook[$a]);
-		var_dump($cook);
 		set_cookie($cook);
 	}
 }
