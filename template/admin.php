@@ -1,9 +1,11 @@
+<?php require_once('template/func/panel.php');?>
 <?php if (isset($_SERVER['PHP_AUTH_USER'])): ?>
 <div id="admin-panel">
 <a href="#add-cat"><h2>Add Categorie</h2></a>
 <a href="#add-user"><h2>Create User</h2></a>
 <a href="#add-product"><h2>Add Article</h2></a>
 <a href="#stock-opt"><h2>Product Gestion</h2></a>
+<a href="#comme"><h2>Commande</h2></a>
 </div>
 <div id="#add-cat">
 <h1>Add Categorie</h1>
@@ -58,6 +60,22 @@
 	<a href=<?php echo "?page=admin&action=del_prod&product=".$name ?>><button>del</button></a>
 	</div>
 <?php endforeach ?>
+<?php $com = get_command()?>
+<div id="comme">
+<h1>Commande</h1>
+<?php foreach($com as $e => $tr):?>
+<div>
+<?php foreach($tr as $key => $val): ?>
+	<?php if ($val):?>
+	<h1><?php echo $key; ?></h1>
+	<?php foreach($val as $cle => $valeur): ?>
+		<h4><?php echo $cle." ".$valeur;?></h4>
+	<?php endforeach ?>
+	<?php endif;?>
+<?php endforeach ?>
+</div>
+<?php endforeach;?>
+</div>
 </div>
 <?php else: ?>
 <p>No No No Stop it Now Please</p>

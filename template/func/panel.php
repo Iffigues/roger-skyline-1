@@ -30,6 +30,12 @@ function del_cookie($a) {
 	}
 }
 
+function ft_modify($a,$c) {
+	$cook = get_cookie();
+	$cook[$c] = intval($a['nbr']);
+	set_cookie($cook);
+}
+
 function panel() {
 	if ($_GET['build']) {
 		if (!$_SESSION["login"]){
@@ -37,14 +43,17 @@ function panel() {
 		}	else {
 		$cook = get_cookie();
 		$com = get_command();
-		if ($com) {
-			array_push($com, [$_SESSION['login'] => $cook]);
-		}else
-			$com = [$_SESSION['login'] => $cook];
+		if (!$com)
+		$com = array();
+		array_push($com, [$_SESSION['login'] => $cook]);
 		set_command($com);
 		setcookie("panel",'', time() - 3600);
-		//header('Location: htp://gopiko.fr/n');
+		require_once('./template/home.php');
+		return ;
 		}
+	}
+	if ($_GET['change']) {
+		ft_modify($_POST, $_GET['change']);
 	}
 	if ($_GET['delp']) {
 		del_cookie($_GET['delp']);
