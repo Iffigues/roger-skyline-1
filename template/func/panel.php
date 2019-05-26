@@ -36,7 +36,7 @@ function panel() {
 		$com = get_command();
 		$com[$_SESSION['login']] = $cook;
 		set_command($com);
-		unset($_COOKIE);
+		setcookie("panel",'', time() - 3600);
 	}
 	if (isset($_GET['delp'])) {
 		del_cookie($_GET['delp']);
