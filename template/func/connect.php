@@ -22,5 +22,4 @@ function is_valid($a) {
 		if (hash("whirlpool", $a['passwd']) ==  $r[$a['login']]) {
 			$_SESSION['login'] = $a['login'];
 		}
-	var_dump($_SESSION['login']);
 }

@@ -26,4 +26,8 @@
 		file_put_contents($a."/user",'');
 		chmod($a."/user",0777);
 	}
+	if (!file_exists($a."/command")) {
+		file_put_contents($a."/command",'');
+		chmod($a."/command", 0777);
+	}
 ?>
