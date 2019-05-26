@@ -30,6 +30,7 @@
 <a href=?page=connect><h2>Se connecter 🦄</h2></a>
 <?php  else: ?>
 <a href="?page=logoute"><h2>Log Out</h2></a>
+<a href="?page=account"><h2>Account</h2></a>
 <?php endif; ?>
 <a href="https://www.youtube.com/watch?v=adPdBxINung">Why buy tanks ? 🍑</a>
 </div>
