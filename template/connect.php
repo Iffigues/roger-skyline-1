@@ -1,5 +1,4 @@
-
-<?php if (empty($_SESSION['user'])): ?>
+<?php if (!$_SESSION['login']): ?>
 <div>
 <h1>login</h1>
 <form action="?page=connect&action=login" method="POST">
@@ -16,4 +15,6 @@
 		<input type="submit" value="OK"/>
 	</form>
 </div>
+<?php else: ?>
+<?php header("Location: http://gopiko.fr/")?>
 <?php endif ?>

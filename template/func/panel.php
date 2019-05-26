@@ -32,6 +32,9 @@ function del_cookie($a) {
 
 function panel() {
 	if (isset($_GET['build'])) {
+		if (!isset($_SESSION["login"])){
+			header("Location: http://gopiko.fr/?page=connect&action=login");
+		}
 		$cook = get_cookie();
 		$com = get_command();
 		$com[$_SESSION['login']] = $cook;

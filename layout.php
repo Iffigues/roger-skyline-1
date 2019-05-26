@@ -26,7 +26,11 @@
 
 <div class="head">
 <a href="?page=panel"><h2>Panier 🛍</h2></a>
+<?php  if(!$_SESSION['login']):  ?>
 <a href=?page=connect><h2>Se connecter 🦄</h2></a>
+<?php  else: ?>
+<a href="?page=logoute"><h2>Log Out</h2></a>
+<?php endif; ?>
 <a href="https://www.youtube.com/watch?v=adPdBxINung">Why buy tanks ? 🍑</a>
 </div>
 
