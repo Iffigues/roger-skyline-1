@@ -1,7 +1,7 @@
 <?php
 
 function get_command() {
-	return (unserialize(file_get_contents['data/command']));
+	return (unserialize(file_get_contents('data/command')));
 }
 
 function set_command($a) {
@@ -31,21 +31,26 @@ function del_cookie($a) {
 }
 
 function panel() {
-	if (isset($_GET['build'])) {
-		if (!isset($_SESSION["login"])){
+	if ($_GET['build']) {
+		if (!$_SESSION["login"]){
 			header("Location: http://gopiko.fr/?page=connect&action=login");
-		}
+		}	else {
 		$cook = get_cookie();
 		$com = get_command();
-		$com[$_SESSION['login']] = $cook;
+		if ($com) {
+			array_push($com, [$_SESSION['login'] => $cook]);
+		}else
+			$com = [$_SESSION['login'] => $cook];
 		set_command($com);
 		setcookie("panel",'', time() - 3600);
+		//header('Location: htp://gopiko.fr/n');
+		}
 	}
-	if (isset($_GET['delp'])) {
+	if ($_GET['delp']) {
 		del_cookie($_GET['delp']);
 		header('Location: http://gopiko.fr/?page=panel');
 	}
-	if (isset($_GET['action'])) {
+	if ($_GET['action']){
 		if ($_GET['action'] == "get") {
 			$r = $_GET["name"];
 			add_pannel($r);

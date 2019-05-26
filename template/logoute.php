@@ -1,2 +1,2 @@
-<?php header("Location: /"); ?>
+<?php header("Location: http://gopiko.fr/"); ?>
 

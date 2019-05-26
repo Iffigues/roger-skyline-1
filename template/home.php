@@ -15,7 +15,7 @@
 </div>
 <div class="tank">
 <h1>Char Britannique 🇬🇧</h1>
-<a href="?page=article&article=britannique"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Cromwell-latrun-2.jpg"></a>
+<a href="?page=article&article=anglais"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Cromwell-latrun-2.jpg"></a>
 </div>
 <div class="tank">
 <h1>Char Américain 🇺🇸</h1>
